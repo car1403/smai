@@ -32,5 +32,19 @@ if __name__ == '__main__':
         {"name": "홍말숙", "age": 23, "major": "se"},
         {"name": "정말숙", "age": 24, "major": "sw"}
     ]
+    # 전체 학생들의 나이의 합과 평균을 출력 하시오
+    sum = 0
+    for st in sts:
+        sum += st["age"]
+    print(f" 합 {sum}  평균 {sum/len(sts)} ")
 
     # SW 학과 학생들의 나이의 합과 평균을 출력 하시오
+    sum = 0
+    count = 0
+    for data in sts:
+        if data["major"] == "sw":
+            sum += data["age"]
+            count = count + 1
+
+    print(f"결과: 합 {sum} 평균{sum/count}")
+    print("결과 합 %d, 평균 %.2f"%(sum, sum/count))
